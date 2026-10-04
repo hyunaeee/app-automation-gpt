@@ -10,7 +10,7 @@
 
 > 이 폴더의 CODEX_HANDOFF.md와 README.md를 먼저 읽고 Launchpad 개발을 이어가 줘. 전체 AI Development Agent 플랫폼과 Atelier 모바일 샘플을 구분해서 현재 코드를 확인해 줘. 기존 디자인, 샘플과 사용자 데이터를 보존하고, 구현·검증된 기능과 아직 연결되지 않은 기능을 구분해 줘. 현재 서버 상태를 확인하고 이미 실행 중이면 그대로 사용해 줘. 이어서 할 작업: [원하는 변경사항].
 
-GitHub 저장소는 [hyunaeee/app-automation-gpt](https://github.com/hyunaeee/app-automation-gpt)이며 비공개, 기본 브랜치는 `main`이다. 접근 권한이 있는 GitHub 계정으로 인증한 뒤 아래 명령으로 소스를 받는다.
+GitHub 저장소는 [hyunaeee/app-automation-gpt](https://github.com/hyunaeee/app-automation-gpt)이며 공개, 기본 브랜치는 `main`이다. 아래 명령으로 소스를 받을 수 있다. 변경사항을 push하려면 저장소 쓰기 권한이 있는 GitHub 계정으로 인증한다.
 
 ```sh
 git clone https://github.com/hyunaeee/app-automation-gpt.git
