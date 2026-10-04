@@ -1,0 +1,201 @@
+{
+  "status": "completed",
+  "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+  "filename": "atelier-mobile.apk",
+  "sha256": "4584c43fea3b2cd164f5e1a531d02625eecfbcf2947ff5d7ea79ac97590fbd15",
+  "size": 414375,
+  "builtAt": "2026-10-04T09:34:04.596Z",
+  "signatureVerified": true,
+  "mode": "debug",
+  "applicationId": "com.launchpad.p40a5f71e6bb84b238cb31459487b9882",
+  "project": {
+    "id": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+    "name": "Atelier · 모바일 디자인 스튜디오",
+    "kind": "mobile-app"
+  },
+  "artifact": {
+    "path": "atelier-mobile.apk",
+    "size": 414375,
+    "sha256": "4584c43fea3b2cd164f5e1a531d02625eecfbcf2947ff5d7ea79ac97590fbd15",
+    "applicationId": "com.launchpad.p40a5f71e6bb84b238cb31459487b9882",
+    "mode": "debug"
+  },
+  "signature": {
+    "verified": true,
+    "mode": "debug",
+    "certificateDN": "CN=Android Debug, O=Launchpad, C=US",
+    "certificateSha256": "0752d5fb9c924301803b75e3a351f3eda6dfb54b293f3dc501071d294fd3ba6f",
+    "output": "Verifies\r\nVerified using v1 scheme (JAR signing): true\r\nVerified using v2 scheme (APK Signature Scheme v2): true\r\nVerified using v3 scheme (APK Signature Scheme v3): true\r\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\r\nVerified using v4 scheme (APK Signature Scheme v4): false\r\nVerified for SourceStamp: false\r\nNumber of signers: 1\r\nSigner #1 certificate DN: CN=Android Debug, O=Launchpad, C=US\r\nSigner #1 certificate SHA-256 digest: 0752d5fb9c924301803b75e3a351f3eda6dfb54b293f3dc501071d294fd3ba6f\r\nSigner #1 certificate SHA-1 digest: 9b6eb8a87628820e6e562204cda82489af3c7cc5\r\nSigner #1 certificate MD5 digest: ff947d4b81139b52c47c3ea548ba2aca\r\nSigner #1 key algorithm: RSA\r\nSigner #1 key size (bits): 2048\r\nSigner #1 public key SHA-256 digest: 9fb4e635b9901105a25c654d4d50e413b8f7620f49eecb0d2af5e5006fd74ac6\r\nSigner #1 public key SHA-1 digest: 83d78c705ab30f9b55de779be75f0181c9c823a3\r\nSigner #1 public key MD5 digest: 8e16854c2344128f5f21572cd5669e10"
+  },
+  "sourceHash": "754ee5004d4b70c3f6e518184fee316aeefb42ef9b6131d0d1f4a0f5edbd3cb4",
+  "snapshotHash": "d01d839757554b0595d85963b0b703cb670caf182d84ec28d569eba67b2080ba",
+  "sourceFileSha256": {
+    "public/app.js": "be361037e2df6ea1726f428232da4a004ef3ea482af0c2089a7bf2ac4d63cc7c",
+    "public/design-assets.js": "e87ede80035a6a05734181b1909823d3380b6fd39843466c6c6da9f94c124511",
+    "public/index.html": "08f274cc30bd1336474d71bf27c88a1c7ba261713ae53a3616f721a9bf1feb86",
+    "public/styles.css": "9f88fb0e46b6540fb3b8a3c767f3deac8ffe2c46c8a7a2ea13efb7904112d025"
+  },
+  "assets": [
+    {
+      "path": "public/app.js",
+      "bytes": 39459,
+      "sha256": "be361037e2df6ea1726f428232da4a004ef3ea482af0c2089a7bf2ac4d63cc7c"
+    },
+    {
+      "path": "public/design-assets.js",
+      "bytes": 508785,
+      "sha256": "e87ede80035a6a05734181b1909823d3380b6fd39843466c6c6da9f94c124511"
+    },
+    {
+      "path": "public/index.html",
+      "bytes": 409,
+      "sha256": "08f274cc30bd1336474d71bf27c88a1c7ba261713ae53a3616f721a9bf1feb86"
+    },
+    {
+      "path": "public/styles.css",
+      "bytes": 21019,
+      "sha256": "9f88fb0e46b6540fb3b8a3c767f3deac8ffe2c46c8a7a2ea13efb7904112d025"
+    }
+  ],
+  "checks": [
+    {
+      "name": "native-apk-structure",
+      "passed": true,
+      "detail": "Compiled AndroidManifest.xml, classes.dex and resources.arsc verified."
+    },
+    {
+      "name": "bundled-offline-assets",
+      "passed": true,
+      "detail": "All 4 public assets are packaged under assets/web/."
+    },
+    {
+      "name": "debug-signature",
+      "passed": true,
+      "detail": "apksigner verify --verbose --print-certs succeeded with the expected development certificate."
+    },
+    {
+      "name": "artifact-integrity",
+      "passed": true,
+      "detail": "The exported APK SHA-256 equals the verified build artifact."
+    }
+  ],
+  "toolchain": {
+    "apiLevel": 34,
+    "buildToolsVersion": "34.0.0"
+  },
+  "runtimeVerification": {
+    "status": "verified",
+    "verifiedAt": "2026-10-04T09:37:07.407Z",
+    "device": {
+      "serial": "emulator-5562",
+      "apiLevel": 36,
+      "headless": true,
+      "avd": "MaumFriend_API_36",
+      "readOnly": true,
+      "snapshotsSaved": false
+    },
+    "checks": [
+      {
+        "name": "android-install",
+        "passed": true,
+        "detail": "The verified APK installed successfully in the dedicated emulator."
+      },
+      {
+        "name": "android-launch",
+        "passed": true,
+        "detail": "Activity startup returned Status: ok and the application owns the foreground window."
+      },
+      {
+        "name": "android-runtime-errors",
+        "passed": true,
+        "detail": "No fatal exception or uncaught JavaScript error was found in this process log."
+      },
+      {
+        "name": "home-image-visual-review",
+        "passed": true,
+        "detail": "The full tote image, Atelier home heading, and navigation rendered normally.",
+        "evidence": "screenshots/android-home.png"
+      },
+      {
+        "name": "detail-image-visual-review",
+        "passed": true,
+        "detail": "Tote detail image, 36 x 32 x 12 cm controls and fixed See estimate action rendered normally.",
+        "evidence": "screenshots/android-detail.png"
+      },
+      {
+        "name": "estimate-native-flow",
+        "passed": true,
+        "detail": "Tapping See estimate displayed KRW 83,000, canvas 0.90m and lining 0.40m.",
+        "evidence": "screenshots/android-estimate.png"
+      },
+      {
+        "name": "save-native-flow",
+        "passed": true,
+        "detail": "Save design changed to Saved and Library displayed one Everyday tote record.",
+        "evidence": "screenshots/android-library.png"
+      },
+      {
+        "name": "device-storage-persistence",
+        "passed": true,
+        "detail": "After force-stop and cold relaunch, Library still displayed the saved design.",
+        "evidence": "screenshots/android-library-after-restart.png"
+      },
+      {
+        "name": "source-consistency",
+        "passed": true,
+        "detail": "All four app source hashes still match both browser validation and the signed APK build report."
+      },
+      {
+        "name": "relaunch-runtime-errors",
+        "passed": true,
+        "detail": "No fatal exception or uncaught JavaScript error appeared in the cold-relaunch process log."
+      }
+    ],
+    "screenshot": "screenshots/android-home.png",
+    "log": "android-runtime.log",
+    "detail": "Home and detail both render the intended tote concept image. The production estimate shows KRW 83,000, canvas 0.90m and lining 0.40m. Saving adds one design to Library, which persists after an Android process cold restart.",
+    "method": "Dedicated read-only API 36 emulator; adb installation and launch, screenshot-observed taps, direct screenshot visual inspection. UIAutomator exposes only the WebView boundary, so no HTML selector claims are made.",
+    "screenshots": [
+      {
+        "path": "screenshots/android-home.png",
+        "sha256": "87ca40cce3c4df3c5ed509657db22635375e1a1f6d8ee1236535d3b4d2e9a058",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-detail.png",
+        "sha256": "ff5b1ea3506269f201ba0a8a1e13d51bbf6c8e6657cbd7d83b11df1a3d12ad7d",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-estimate.png",
+        "sha256": "39b2fe16c5b5aedc4a1bbb153da1089423e1046ca850e4bcc549acb08c485633",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-saved.png",
+        "sha256": "813d4a15d57bd53994cd7cd098548a2fe4801a9d025542ec2e4681ba8bc57f04",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-library.png",
+        "sha256": "2467adfff1e6ce0bc173fbb60fadbced05d5ecfd0aae0c2377a134ccd80e6624",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-library-after-restart.png",
+        "sha256": "3a0e5401fce0fe27e1cac3fabc4cc230bc44261352d8b333eeacbf5039bedd8b",
+        "visuallyReviewed": true
+      }
+    ],
+    "cleanup": {
+      "status": "stopped",
+      "stoppedAt": "2026-10-04T09:38:10.760Z",
+      "detail": "Only the dedicated emulator process tree started for this task was stopped. It ran with -read-only, -no-snapshot and -no-snapshot-save."
+    }
+  },
+  "limitations": [
+    "Development-signed APK for installation and testing; not a Play Store release build.",
+    "The application packages device-local web assets. Browser and Android local storage are independent."
+  ],
+  "logs": "Android 리소스를 패키징합니다.\n신뢰된 Android WebView 런타임을 컴파일합니다.\nNote: <workspace>\\.data\\atelier-mobile-android\\40a5f71e-6bb8-4b23-8cb3-1459487b9882\\apk-YCDGgH\\android\\app\\src\\main\\java\\com\\launchpad\\p40a5f71e6bb84b238cb31459487b9882\\MainActivity.java uses or overrides a deprecated API.\r\nNote: Recompile with -Xlint:deprecation for details.\r\nAn exception has occurred in the compiler (17.0.20). Please file a bug against the Java compiler via the Java bug reporting page (https://bugreport.java.com) after checking the Bug Database (https://bugs.java.com) for duplicates. Include your program, the following diagnostic, and the parameters passed to the Java compiler in your report. Thank you.\r\njava.nio.file.AccessDeniedException: <user>\\AppData\\Local\\Android\\Sdk\\platforms\\android-34\\android.jar\r\n\tat java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)\r\n\tat java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:96)\r\n\tat java.base/sun.nio.fs.WindowsLinkSupport.getRealPath(WindowsLinkSupport.java:258)\r\n\tat java.base/sun.nio.fs.WindowsPath.toRealPath(WindowsPath.java:933)\r\n\tat java.base/sun.nio.fs.WindowsPath.toRealPath(WindowsPath.java:42)\r\n\tat jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.lambda$removeFileSystem$0(ZipFileSystemProvider.java:305)\r\n\tat java.base/java.security.AccessController.doPrivileged(AccessController.java:569)\r\n\tat jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.removeFileSystem(ZipFileSystemProvider.java:307)\r\n\tat jdk.zipfs/jdk.nio.zipfs.ZipFileSystem.close(ZipFileSystem.java:526)\r\n\tat jdk.compiler/com.sun.tools.javac.file.JavacFileManager$ArchiveContainer.close(JavacFileManager.java:660)\r\n\tat jdk.compiler/com.sun.tools.javac.file.JavacFileManager.close(JavacFileManager.java:738)\r\n\tat jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:180)\r\n\tat jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:64)\r\n\tat jdk.compiler/com.sun.tools.javac.Main.main(Main.java:50)\r\n개발용 키로 APK에 서명합니다.\n������ ���� ��ȿ �Ⱓ�� 10,000���� 2,048��Ʈ RSA Ű �� �� ��ü ������ ������(SHA256withRSA)�� �����ϴ� ��\n\t: CN=Android Debug, O=Launchpad, C=US\r\nVerifies\r\nVerified using v1 scheme (JAR signing): true\r\nVerified using v2 scheme (APK Signature Scheme v2): true\r\nVerified using v3 scheme (APK Signature Scheme v3): true\r\nVerified using v3.1 scheme (APK Signature Scheme v3.1): false\r\nVerified using v4 scheme (APK Signature Scheme v4): false\r\nVerified for SourceStamp: false\r\nNumber of signers: 1\r\nAPK 서명과 패키지 검증을 통과했습니다.\n"
+}

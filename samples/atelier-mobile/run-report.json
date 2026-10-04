@@ -1,0 +1,397 @@
+{
+  "name": "Atelier · 모바일 디자인 스튜디오",
+  "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+  "verifiedAt": "2026-10-04T09:39:09.869Z",
+  "workflow": [
+    "이미지 모델로 모바일 UI 레퍼런스 생성",
+    "레퍼런스 확인 및 디자인 기준 추출",
+    "레퍼런스에 맞춰 실제 기능 구현",
+    "브라우저에서 기능과 반응형 검증",
+    "Android APK 컴파일 및 서명 검증",
+    "결과물과 레퍼런스를 샘플 갤러리에 보관"
+  ],
+  "reference": "design/reference-v1.png",
+  "prompt": "design/image-prompt.json",
+  "supportingAssetPrompt": "design/tote-image-prompt.json",
+  "runtimeChecks": [
+    {
+      "name": "server.mjs 문법 검사",
+      "passed": true,
+      "detail": "node --check 통과"
+    },
+    {
+      "name": "public/app.js 문법 검사",
+      "passed": true,
+      "detail": "node --check 통과"
+    },
+    {
+      "name": "앱 실행",
+      "passed": true,
+      "detail": "독립 Node 프로세스의 health API 응답 확인"
+    },
+    {
+      "name": "브라우저 진입 파일",
+      "passed": true,
+      "detail": "HTML·JS·CSS 제공 및 CSP 호환 외부 스크립트 진입점 검사 (UI 동작 검사는 별도)"
+    },
+    {
+      "name": "오프라인 자산 구성",
+      "passed": true,
+      "detail": "앱 코드에 네트워크 호출·외부 CSS 의존성이 없는지 검사"
+    },
+    {
+      "name": "기기 저장소 연결",
+      "passed": true,
+      "detail": "기기 저장 코드 포함 확인. 기록 추가·수정·삭제의 실제 화면 동작은 미리보기에서 확인하세요."
+    }
+  ],
+  "browser": {
+    "verifiedAt": "2026-10-04T09:31:21.701Z",
+    "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+    "name": "Atelier · 모바일 디자인 스튜디오",
+    "url": "http://127.0.0.1:62010/",
+    "designReference": {
+      "path": "design/reference-v1.png",
+      "sha256": "7ccfe043181150757ca73f73a69bd9051ec0108da3829297a8902ba626a49492"
+    },
+    "checks": [
+      {
+        "name": "이미지 레퍼런스 기반 Studio와 실제 제품 이미지 로드",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "Design와Pattern 전환 및 이미지의 실측 한계 표시",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "상세 CTA가 하단 내비게이션 위에 항상 표시",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "기본 비용83,000원·겉감0.90m·안감0.40m 산출",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "견적 저장·업체찾기 CTA가 하단 내비게이션 위에 표시",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "제작업체 찾기는 실제 입력 브리프와 선택 가능한 검색어 제공",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "디자인 저장→Library→새로고침→다시 열기",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "명시 치수 수정→Pattern 갱신→저장본 업데이트",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "빈 치수→Studio·Materials 이동 후에도 crash나NaN 없음",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "Materials 단가 수정은 산술 결과를 정확히 갱신",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "통화 변경 시 공임·개발비를 포함한 모든 단위 갱신",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "원단 폭 오류와 소수 제작 수량을 검출하고 복구",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "새 자연어 브리프의 종류·치수·이름 파싱",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "새 디자인 추가·검색·삭제·삭제 후 새로고침 유지",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "320·390·430px 모든 화면의 가로 넘침과 고정 CTA 확인",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "데스크톱에서는 앱이 480px 이하로 중앙 배치",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "오프라인 동작: 외부 요청·네트워크 코드 없음",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "브라우저 JavaScript 오류 없음",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      },
+      {
+        "name": "검증 중 앱 소스 변경 없음",
+        "passed": true,
+        "detail": "실제 Chrome 화면 조작으로 확인"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "studio",
+        "path": "screenshots/studio.png",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "design",
+        "path": "screenshots/design.png",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "estimate",
+        "path": "screenshots/estimate.png",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "library",
+        "path": "screenshots/library.png",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "materials",
+        "path": "screenshots/materials.png",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "studio-430",
+        "path": "screenshots/studio-430.png",
+        "width": 430,
+        "height": 932
+      },
+      {
+        "name": "studio-320",
+        "path": "screenshots/studio-320.png",
+        "width": 320,
+        "height": 740
+      },
+      {
+        "name": "desktop",
+        "path": "screenshots/desktop.png",
+        "width": 1200,
+        "height": 1000
+      }
+    ],
+    "sourceFileSha256": {
+      "public/index.html": "08f274cc30bd1336474d71bf27c88a1c7ba261713ae53a3616f721a9bf1feb86",
+      "public/app.js": "be361037e2df6ea1726f428232da4a004ef3ea482af0c2089a7bf2ac4d63cc7c",
+      "public/styles.css": "9f88fb0e46b6540fb3b8a3c767f3deac8ffe2c46c8a7a2ea13efb7904112d025",
+      "public/design-assets.js": "e87ede80035a6a05734181b1909823d3380b6fd39843466c6c6da9f94c124511"
+    }
+  },
+  "apk": {
+    "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+    "applicationId": "com.launchpad.p40a5f71e6bb84b238cb31459487b9882",
+    "sha256": "4584c43fea3b2cd164f5e1a531d02625eecfbcf2947ff5d7ea79ac97590fbd15",
+    "size": 414375,
+    "signatureVerified": true,
+    "builtAt": "2026-10-04T09:34:04.596Z"
+  },
+  "emulator": {
+    "status": "verified",
+    "verifiedAt": "2026-10-04T09:37:07.407Z",
+    "device": {
+      "serial": "emulator-5562",
+      "apiLevel": 36,
+      "headless": true,
+      "avd": "MaumFriend_API_36",
+      "readOnly": true,
+      "snapshotsSaved": false
+    },
+    "checks": [
+      {
+        "name": "android-install",
+        "passed": true,
+        "detail": "The verified APK installed successfully in the dedicated emulator."
+      },
+      {
+        "name": "android-launch",
+        "passed": true,
+        "detail": "Activity startup returned Status: ok and the application owns the foreground window."
+      },
+      {
+        "name": "android-runtime-errors",
+        "passed": true,
+        "detail": "No fatal exception or uncaught JavaScript error was found in this process log."
+      },
+      {
+        "name": "home-image-visual-review",
+        "passed": true,
+        "detail": "The full tote image, Atelier home heading, and navigation rendered normally.",
+        "evidence": "screenshots/android-home.png"
+      },
+      {
+        "name": "detail-image-visual-review",
+        "passed": true,
+        "detail": "Tote detail image, 36 x 32 x 12 cm controls and fixed See estimate action rendered normally.",
+        "evidence": "screenshots/android-detail.png"
+      },
+      {
+        "name": "estimate-native-flow",
+        "passed": true,
+        "detail": "Tapping See estimate displayed KRW 83,000, canvas 0.90m and lining 0.40m.",
+        "evidence": "screenshots/android-estimate.png"
+      },
+      {
+        "name": "save-native-flow",
+        "passed": true,
+        "detail": "Save design changed to Saved and Library displayed one Everyday tote record.",
+        "evidence": "screenshots/android-library.png"
+      },
+      {
+        "name": "device-storage-persistence",
+        "passed": true,
+        "detail": "After force-stop and cold relaunch, Library still displayed the saved design.",
+        "evidence": "screenshots/android-library-after-restart.png"
+      },
+      {
+        "name": "source-consistency",
+        "passed": true,
+        "detail": "All four app source hashes still match both browser validation and the signed APK build report."
+      },
+      {
+        "name": "relaunch-runtime-errors",
+        "passed": true,
+        "detail": "No fatal exception or uncaught JavaScript error appeared in the cold-relaunch process log."
+      }
+    ],
+    "screenshot": "screenshots/android-home.png",
+    "log": "android-runtime.log",
+    "detail": "Home and detail both render the intended tote concept image. The production estimate shows KRW 83,000, canvas 0.90m and lining 0.40m. Saving adds one design to Library, which persists after an Android process cold restart.",
+    "method": "Dedicated read-only API 36 emulator; adb installation and launch, screenshot-observed taps, direct screenshot visual inspection. UIAutomator exposes only the WebView boundary, so no HTML selector claims are made.",
+    "screenshots": [
+      {
+        "path": "screenshots/android-home.png",
+        "sha256": "87ca40cce3c4df3c5ed509657db22635375e1a1f6d8ee1236535d3b4d2e9a058",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-detail.png",
+        "sha256": "ff5b1ea3506269f201ba0a8a1e13d51bbf6c8e6657cbd7d83b11df1a3d12ad7d",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-estimate.png",
+        "sha256": "39b2fe16c5b5aedc4a1bbb153da1089423e1046ca850e4bcc549acb08c485633",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-saved.png",
+        "sha256": "813d4a15d57bd53994cd7cd098548a2fe4801a9d025542ec2e4681ba8bc57f04",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-library.png",
+        "sha256": "2467adfff1e6ce0bc173fbb60fadbced05d5ecfd0aae0c2377a134ccd80e6624",
+        "visuallyReviewed": true
+      },
+      {
+        "path": "screenshots/android-library-after-restart.png",
+        "sha256": "3a0e5401fce0fe27e1cac3fabc4cc230bc44261352d8b333eeacbf5039bedd8b",
+        "visuallyReviewed": true
+      }
+    ],
+    "cleanup": {
+      "status": "stopped",
+      "stoppedAt": "2026-10-04T09:38:10.760Z",
+      "detail": "Only the dedicated emulator process tree started for this task was stopped. It ran with -read-only, -no-snapshot and -no-snapshot-save."
+    }
+  },
+  "limitations": [
+    "이미지는 정적 디자인 콘셉트이며 치수 변경에 따라 재생성되지 않습니다.",
+    "치수는 사용자가 직접 입력합니다. 실측이나 생산용 패턴을 제공하지 않습니다.",
+    "견적은 사용자가 조정할 수 있는 가정 단가와 단순 재단 배치 기준입니다.",
+    "앱 내 자연어 초안은 제한된 로컬 규칙을 사용하며 실시간 AI 호출이 아닙니다.",
+    "APK는 오프라인 WebView 기반 개발용 설치 파일입니다.",
+    "제작처 자동 연락·예약·실제 견적 확정은 포함하지 않습니다."
+  ],
+  "sourceFileSha256": {
+    "public/index.html": "08f274cc30bd1336474d71bf27c88a1c7ba261713ae53a3616f721a9bf1feb86",
+    "public/app.js": "be361037e2df6ea1726f428232da4a004ef3ea482af0c2089a7bf2ac4d63cc7c",
+    "public/styles.css": "9f88fb0e46b6540fb3b8a3c767f3deac8ffe2c46c8a7a2ea13efb7904112d025",
+    "public/design-assets.js": "e87ede80035a6a05734181b1909823d3380b6fd39843466c6c6da9f94c124511"
+  },
+  "delivery": {
+    "verifiedAt": "2026-10-04T09:35:26.113Z",
+    "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+    "base": "http://127.0.0.1:3001",
+    "checks": [
+      {
+        "name": "저장한 모바일 프로젝트와 소스 일치",
+        "passed": true
+      },
+      {
+        "name": "프로젝트 APK 다운로드 및 무결성",
+        "passed": true
+      },
+      {
+        "name": "갤러리 앱과 검증한 소스 일치",
+        "passed": true
+      },
+      {
+        "name": "갤러리 APK와 프로젝트 APK 동일",
+        "passed": true
+      },
+      {
+        "name": "소스 ZIP 제공",
+        "passed": true
+      },
+      {
+        "name": "레퍼런스 원본과 프롬프트 제공",
+        "passed": true
+      }
+    ]
+  },
+  "gallery": {
+    "status": "passed",
+    "passed": 3,
+    "tests": [
+      "e2e/atelier-gallery.spec.ts",
+      "e2e/atelier-mobile-gallery.spec.ts"
+    ],
+    "browser": "Chrome",
+    "screenshots": [
+      "screenshots/gallery-desktop.png",
+      "screenshots/gallery-mobile.png"
+    ],
+    "checks": [
+      "기존 웹 샘플 회귀 검사",
+      "모바일 샘플 조작·레퍼런스 전환·치수 유지·APK 및 소스 다운로드",
+      "공개 샘플 파일이 없으면 카드 숨김"
+    ],
+    "viewportWidths": [
+      1440,
+      390
+    ],
+    "testServer": "Port 3003 test server stopped after verification"
+  }
+}

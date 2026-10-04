@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "passed": 3,
+  "tests": ["e2e/atelier-gallery.spec.ts", "e2e/atelier-mobile-gallery.spec.ts"],
+  "browser": "Chrome",
+  "screenshots": ["screenshots/gallery-desktop.png", "screenshots/gallery-mobile.png"],
+  "checks": ["기존 웹 샘플 회귀 검사", "모바일 샘플 조작·레퍼런스 전환·치수 유지·APK 및 소스 다운로드", "공개 샘플 파일이 없으면 카드 숨김"],
+  "viewportWidths": [1440, 390],
+  "testServer": "Port 3003 test server stopped after verification"
+}

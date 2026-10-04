@@ -1,0 +1,10 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.apk binary
+*.zip binary
+*.woff2 binary
+# Preserve verified sample source bytes, including mixed line endings.
+samples/**/app/public/** -text

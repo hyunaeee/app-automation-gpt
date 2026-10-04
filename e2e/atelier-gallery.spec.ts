@@ -1,0 +1,27 @@
+import { test, expect } from '@playwright/test';
+test('saved subscription sample is interactive in an isolated gallery preview',async({page},testInfo)=>{
+  await page.goto('/#new');
+  const sample=page.getByRole('region',{name:'패션 제작 앱 실제 검증 샘플'});
+  await expect(sample).toBeVisible();
+  await sample.scrollIntoViewIfNeeded();
+  const frame=page.frameLocator('iframe[title="패션 제작 앱 검증 샘플"]');
+  await expect(frame.locator('#total-cost')).toHaveText('₩83,000');
+  const concept=frame.locator('#drawing-canvas img');
+  await expect(concept).toHaveAttribute('src',/^data:image\/(png|jpeg|webp);base64,/);
+  await expect.poll(()=>concept.evaluate(image=>(image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect(page.locator('iframe[title="패션 제작 앱 검증 샘플"]')).not.toHaveAttribute('sandbox',/allow-same-origin/);
+  await sample.screenshot({path:testInfo.outputPath('gallery.png')});
+  await sample.getByRole('button',{name:'크게 보기',exact:true}).click();
+  const dialog=page.getByRole('dialog',{name:'패션 제작 샘플 크게 보기'});
+  await expect(dialog).toBeVisible();
+  const full=page.frameLocator('iframe[title="패션 제작 앱 전체 화면"]');
+  await full.locator('[name=width]').fill('40');
+  await full.locator('[data-view="diagram"]').click();
+  await expect(full.locator('#drawing-canvas')).toContainText('40 cm');
+  await dialog.getByRole('button',{name:'닫기',exact:true}).click();
+  await expect(dialog).toHaveCount(0);
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBeTruthy();
+  const download=await page.request.get('/examples/atelier/source.zip');
+  expect(download.ok()).toBeTruthy();expect((await download.body()).subarray(0,2).toString()).toBe('PK');
+});

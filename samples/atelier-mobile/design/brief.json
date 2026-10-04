@@ -1,0 +1,14 @@
+{
+  "name": "Atelier · 모바일 디자인 스튜디오",
+  "originalIdea": "가방/옷 디자인을 설명해주면 도면을 짜주고 얼마나 재료가 들어갈지 치수도 정확하게 재주고 예상 비용까지 예측해주는 그런 앱 만들고 싶어. 제작해주는 곳 연결까지 해주면 좋고",
+  "workflow": ["이미지 모델로 모바일 UI 레퍼런스 생성", "레퍼런스 확인 및 디자인 기준 추출", "레퍼런스에 맞춰 실제 기능 구현", "브라우저에서 기능과 반응형 검증", "Android APK 컴파일 및 서명 검증", "결과물과 레퍼런스를 샘플 갤러리에 보관"],
+  "reference": "reference-v1.png",
+  "tokens": {"paper":"#F8F5EE","ink":"#292923","accent":"#A85438","type":"Editorial serif headings with legible sans-serif controls","layout":"Single-column mobile screens with persistent bottom navigation"},
+  "screens": [
+    {"name":"Studio","reference":"atelier. wordmark, Make it yours. title, large tote photograph, rust New design button, recent design row"},
+    {"name":"Design","reference":"Design / Pattern segmented control, product image, Made to measure. title, three dimension inputs, color swatches, estimate action"},
+    {"name":"Estimate","reference":"Product thumbnail, dark olive total card, material quantities, save and maker actions"}
+  ],
+  "functionalScope": ["토트백 및 기본 상의 초안", "직접 입력한 치수 기반 참고 도면", "원단·안감·부자재·공임 견적", "수량 및 단가 편집", "기기 내 디자인 저장·불러오기·삭제", "제작 문의 내용 정리"],
+  "limitations": ["이미지는 정적 디자인 콘셉트이며 치수 변경에 따라 재생성되지 않습니다.", "치수는 사용자가 직접 입력합니다. 실측이나 생산용 패턴을 제공하지 않습니다.", "견적은 사용자가 조정할 수 있는 가정 단가와 단순 재단 배치 기준입니다.", "앱 내 자연어 초안은 제한된 로컬 규칙을 사용하며 실시간 AI 호출이 아닙니다.", "APK는 오프라인 WebView 기반 개발용 설치 파일입니다.", "제작처 자동 연락·예약·실제 견적 확정은 포함하지 않습니다."]
+}

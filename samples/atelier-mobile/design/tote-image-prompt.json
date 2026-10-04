@@ -1,0 +1,9 @@
+{
+  "mode": "built-in image_gen",
+  "useCase": "product-mockup",
+  "createdAt": "2026-10-04T09:28:38.339Z",
+  "reference": "reference-v1.png",
+  "output": "tote-photo-v1.png",
+  "webAsset": "tote-photo-v1.jpg",
+  "prompt": "Use case: product-mockup. Input image is a STYLE AND SUBJECT REFERENCE, not an edit target. Recreate ONLY the beautiful canvas tote product photograph visible in the supplied atelier mobile UI reference, as a standalone asset for that app. No UI, phones, border, text, logos, measurements, diagrams or labels. Square composition. Premium natural sand oatmeal cotton canvas tote with warm dark brown leather handles attached by subtle brass rivets. Match the bag and quiet artisan aesthetic in the reference as closely as possible. Full bag including both entire handles visible, front three-quarter view. Warm ivory plaster studio background extending seamlessly edge to edge, small stone vase with delicate dried stems far on the left margin, bag centered with generous breathing room: whole bag occupies middle 68% width and 73% height, ample clear margin above handle tips and below base. Soft window light from upper left, realistic woven canvas texture, warm muted cream and brown palette. Product standing on a continuous beige stone surface. Frame for a mobile hero image which will crop square to slightly landscape 1.13:1; keep bag fully inside the central region so no handles or base get cut off. Photorealistic editorial still life, visually consistent with the supplied reference."
+}

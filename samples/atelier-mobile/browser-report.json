@@ -1,0 +1,163 @@
+{
+  "verifiedAt": "2026-10-04T09:31:21.701Z",
+  "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+  "name": "Atelier · 모바일 디자인 스튜디오",
+  "url": "http://127.0.0.1:62010/",
+  "designReference": {
+    "path": "design/reference-v1.png",
+    "sha256": "7ccfe043181150757ca73f73a69bd9051ec0108da3829297a8902ba626a49492"
+  },
+  "checks": [
+    {
+      "name": "이미지 레퍼런스 기반 Studio와 실제 제품 이미지 로드",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "Design와Pattern 전환 및 이미지의 실측 한계 표시",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "상세 CTA가 하단 내비게이션 위에 항상 표시",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "기본 비용83,000원·겉감0.90m·안감0.40m 산출",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "견적 저장·업체찾기 CTA가 하단 내비게이션 위에 표시",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "제작업체 찾기는 실제 입력 브리프와 선택 가능한 검색어 제공",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "디자인 저장→Library→새로고침→다시 열기",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "명시 치수 수정→Pattern 갱신→저장본 업데이트",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "빈 치수→Studio·Materials 이동 후에도 crash나NaN 없음",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "Materials 단가 수정은 산술 결과를 정확히 갱신",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "통화 변경 시 공임·개발비를 포함한 모든 단위 갱신",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "원단 폭 오류와 소수 제작 수량을 검출하고 복구",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "새 자연어 브리프의 종류·치수·이름 파싱",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "새 디자인 추가·검색·삭제·삭제 후 새로고침 유지",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "320·390·430px 모든 화면의 가로 넘침과 고정 CTA 확인",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "데스크톱에서는 앱이 480px 이하로 중앙 배치",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "오프라인 동작: 외부 요청·네트워크 코드 없음",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "브라우저 JavaScript 오류 없음",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    },
+    {
+      "name": "검증 중 앱 소스 변경 없음",
+      "passed": true,
+      "detail": "실제 Chrome 화면 조작으로 확인"
+    }
+  ],
+  "screenshots": [
+    {
+      "name": "studio",
+      "path": "screenshots/studio.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "design",
+      "path": "screenshots/design.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "estimate",
+      "path": "screenshots/estimate.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "library",
+      "path": "screenshots/library.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "materials",
+      "path": "screenshots/materials.png",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "name": "studio-430",
+      "path": "screenshots/studio-430.png",
+      "width": 430,
+      "height": 932
+    },
+    {
+      "name": "studio-320",
+      "path": "screenshots/studio-320.png",
+      "width": 320,
+      "height": 740
+    },
+    {
+      "name": "desktop",
+      "path": "screenshots/desktop.png",
+      "width": 1200,
+      "height": 1000
+    }
+  ],
+  "sourceFileSha256": {
+    "public/index.html": "08f274cc30bd1336474d71bf27c88a1c7ba261713ae53a3616f721a9bf1feb86",
+    "public/app.js": "be361037e2df6ea1726f428232da4a004ef3ea482af0c2089a7bf2ac4d63cc7c",
+    "public/styles.css": "9f88fb0e46b6540fb3b8a3c767f3deac8ffe2c46c8a7a2ea13efb7904112d025",
+    "public/design-assets.js": "e87ede80035a6a05734181b1909823d3380b6fd39843466c6c6da9f94c124511"
+  }
+}

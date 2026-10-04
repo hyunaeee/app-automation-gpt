@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image_gen",
+  "purpose": "Static fashion concept references, not production patterns or automatic measurements",
+  "assets": [
+    {
+      "file": "tote-concept-v2.png",
+      "prompt": "Use case: product-mockup. Asset type: premium fashion design web app concept preview, a real raster image to be placed inside a functional product design workbench. Primary request: an exceptionally polished studio photograph of a minimal natural ecru canvas everyday tote bag, slightly wide rectangular body, structured boxed bottom and gussets, two long canvas handles, subtle seam construction, no exterior pockets, no logos. Scene: warm ivory seamless cyclorama and a low plaster block, refined fashion atelier product photography. Composition: portrait 4:5, entire bag and handle loops visible with breathing room, three-quarter view showing the front and right gusset, subject centered. Lighting: soft large window key from upper left, subtle grounded shadow, tactile heavyweight cotton weave, credible stitched fabric, calm editorial art direction. Palette: warm cream canvas against warm off-white; restrained, no green tint. No people, no text, no labels, no ruler, no diagram, no graphics, no watermark. This is a design mood concept, not a measured production pattern."
+    },
+    {
+      "file": "top-concept-v2.png",
+      "prompt": "Use case: product-mockup. Asset type: premium fashion design web app concept preview. Primary request: a refined studio product photograph of an ivory cotton-linen short-sleeved minimal boxy top, straight hem, simple crew neckline, slightly dropped shoulder, careful visible seam finishing, no graphics or logos. Scene: warm off-white seamless studio background. Composition: portrait 4:5; a ghost mannequin product presentation with no visible body, no hanger, no person, entire shirt visible with breathing space, gently dimensional three-quarter view showing realistic fabric drape. Lighting: large soft window key light from upper left and a very subtle grounded shadow, tactile weave and natural tiny folds. Warm cream-on-ivory editorial art direction matching a luxury independent fashion atelier. No text, labels, measurement annotations, rulers, graphics, watermarks, hands or people. This is a design mood concept, not a measured production pattern."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.data/
+.npm-cache/
+artifacts/
+playwright-report/
+test-results/
+*.log
+*.tsbuildinfo
+.vercel/
+# Local execution data and private signing material
+.validation/
+samples/**/app/data.json
+samples/**/app/data.json.tmp
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+*.pem
+.codex/
+.agents/
+.DS_Store
+Thumbs.db

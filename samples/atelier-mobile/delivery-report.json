@@ -1,0 +1,31 @@
+{
+  "verifiedAt": "2026-10-04T09:35:26.113Z",
+  "projectId": "40a5f71e-6bb8-4b23-8cb3-1459487b9882",
+  "base": "http://127.0.0.1:3001",
+  "checks": [
+    {
+      "name": "저장한 모바일 프로젝트와 소스 일치",
+      "passed": true
+    },
+    {
+      "name": "프로젝트 APK 다운로드 및 무결성",
+      "passed": true
+    },
+    {
+      "name": "갤러리 앱과 검증한 소스 일치",
+      "passed": true
+    },
+    {
+      "name": "갤러리 APK와 프로젝트 APK 동일",
+      "passed": true
+    },
+    {
+      "name": "소스 ZIP 제공",
+      "passed": true
+    },
+    {
+      "name": "레퍼런스 원본과 프롬프트 제공",
+      "passed": true
+    }
+  ]
+}

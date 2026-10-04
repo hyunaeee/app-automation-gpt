@@ -1,0 +1,42 @@
+import { chromium } from '@playwright/test';
+import assert from 'node:assert/strict';
+
+const base = 'http://127.0.0.1:3001';
+const browser = await chromium.launch({ channel: process.env.PLAYWRIGHT_CHANNEL || 'chrome', headless: true });
+try {
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1050 } });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(base);
+  await page.getByRole('button', { name: '설정', exact: true }).click();
+  await page.getByRole('dialog').waitFor();
+  await page.getByRole('button', { name: '닫기', exact: true }).click();
+  await page.getByRole('button', { name: '워크플로', exact: true }).click();
+  await page.locator('.workflow-page').waitFor();
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({ path: 'artifacts/launchpad-workflow.png', fullPage: true });
+  const projects = await (await page.request.get(`${base}/api/projects`)).json();
+  const project = projects.find(item => item.status === 'completed');
+  assert.ok(project, 'A completed integration-test project should exist');
+  await page.goto(`${base}/#project/${project.id}`);
+  await page.getByRole('heading', { name: project.name, exact: true }).waitFor();
+  await page.evaluate(() => document.fonts.ready);
+  await page.screenshot({ path: 'artifacts/launchpad-project.png', fullPage: true });
+  await page.getByRole('tab', { name: /소스 코드/ }).click();
+  await page.locator('.source-code').waitFor();
+  assert.ok((await page.locator('.source-code').innerText()).length > 50);
+  await page.getByRole('tab', { name: /검증 결과/ }).click();
+  await page.getByRole('heading', { name: '실제 실행 검증을 통과했어요' }).waitFor();
+  assert.ok(await page.locator('.check-row').count() >= 13);
+  await page.screenshot({ path: 'artifacts/launchpad-checks.png', fullPage: true });
+  await page.getByRole('tab', { name: '실행 로그' }).click();
+  assert.ok(await page.locator('.log-entry').count() > 5);
+  const mobile = await browser.newPage({ viewport: { width: 390, height: 844 } });
+  await mobile.goto(`${base}/#project/${project.id}`);
+  await mobile.getByRole('heading', { name: project.name, exact: true }).waitFor();
+  await mobile.evaluate(() => document.fonts.ready);
+  assert.ok(await mobile.evaluate(() => document.documentElement.scrollWidth - window.innerWidth) <= 1, 'Mobile project view must fit the viewport');
+  await mobile.screenshot({ path: 'artifacts/launchpad-project-mobile.png', fullPage: true, animations: 'disabled' });
+  assert.deepEqual(errors, []);
+  console.log('Settings, workflow, project, files, validation results, and execution logs verified.');
+} finally { await browser.close(); }

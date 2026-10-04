@@ -1,0 +1,203 @@
+{
+  "format": "atelier-production-brief-v1",
+  "createdAt": "2026-10-04T05:23:40.442Z",
+  "design": {
+    "kind": "bag",
+    "name": "검증한 토트백",
+    "description": "내추럴 캔버스 소재의 데일리 토트백. 가로 36cm, 세로 32cm, 폭 12cm, 손잡이 길이 58cm. 안감을 넣고 차분한 샌드 컬러로 만들고 싶어요.",
+    "width": 40,
+    "height": 32,
+    "depth": 12,
+    "strapLength": 58,
+    "strapWidth": 3,
+    "sleeveLength": 22,
+    "sleeveWidth": 20,
+    "seam": 1,
+    "fabricWidth": 150,
+    "waste": 15,
+    "quantity": 1,
+    "fabricPrice": 12000,
+    "liningPrice": 6000,
+    "hardwarePrice": 1800,
+    "labor": 18000,
+    "development": 50000,
+    "lining": true,
+    "currency": "KRW",
+    "color": "sand"
+  },
+  "estimate": {
+    "kind": "bag",
+    "parts": [
+      {
+        "name": "앞·뒤판",
+        "width": 42,
+        "height": 34,
+        "count": 2,
+        "lining": true
+      },
+      {
+        "name": "옆판",
+        "width": 14,
+        "height": 34,
+        "count": 2,
+        "lining": true
+      },
+      {
+        "name": "바닥판",
+        "width": 42,
+        "height": 14,
+        "count": 1,
+        "lining": true
+      },
+      {
+        "name": "손잡이",
+        "width": 5,
+        "height": 60,
+        "count": 2,
+        "lining": false
+      }
+    ],
+    "fabric": {
+      "rows": [
+        {
+          "height": 60,
+          "usedWidth": 122,
+          "pieces": [
+            {
+              "name": "손잡이",
+              "width": 5,
+              "height": 60,
+              "x": 0
+            },
+            {
+              "name": "손잡이",
+              "width": 5,
+              "height": 60,
+              "x": 5
+            },
+            {
+              "name": "앞·뒤판",
+              "width": 42,
+              "height": 34,
+              "x": 10
+            },
+            {
+              "name": "앞·뒤판",
+              "width": 42,
+              "height": 34,
+              "x": 52
+            },
+            {
+              "name": "옆판",
+              "width": 14,
+              "height": 34,
+              "x": 94
+            },
+            {
+              "name": "옆판",
+              "width": 14,
+              "height": 34,
+              "x": 108
+            }
+          ],
+          "y": 0
+        },
+        {
+          "height": 14,
+          "usedWidth": 42,
+          "pieces": [
+            {
+              "name": "바닥판",
+              "width": 42,
+              "height": 14,
+              "x": 0
+            }
+          ],
+          "y": 60
+        }
+      ],
+      "area": 0.4996,
+      "layoutMeters": 0.74,
+      "allowanceMeters": 0.851,
+      "purchaseMeters": 0.9,
+      "utilization": 45.009009009009006,
+      "pieceCount": 7
+    },
+    "lining": {
+      "rows": [
+        {
+          "height": 34,
+          "usedWidth": 112,
+          "pieces": [
+            {
+              "name": "앞·뒤판",
+              "width": 42,
+              "height": 34,
+              "x": 0
+            },
+            {
+              "name": "앞·뒤판",
+              "width": 42,
+              "height": 34,
+              "x": 42
+            },
+            {
+              "name": "옆판",
+              "width": 14,
+              "height": 34,
+              "x": 84
+            },
+            {
+              "name": "옆판",
+              "width": 14,
+              "height": 34,
+              "x": 98
+            }
+          ],
+          "y": 0
+        },
+        {
+          "height": 14,
+          "usedWidth": 42,
+          "pieces": [
+            {
+              "name": "바닥판",
+              "width": 42,
+              "height": 14,
+              "x": 0
+            }
+          ],
+          "y": 34
+        }
+      ],
+      "area": 0.4396,
+      "layoutMeters": 0.48,
+      "allowanceMeters": 0.5519999999999999,
+      "purchaseMeters": 0.6,
+      "utilization": 61.05555555555555,
+      "pieceCount": 5
+    },
+    "costs": {
+      "fabric": 10800,
+      "lining": 3600,
+      "hardware": 1800,
+      "labor": 18000,
+      "development": 50000
+    },
+    "total": 84200,
+    "perUnit": 84200,
+    "quantity": 1,
+    "fabricWidth": 150,
+    "waste": 15,
+    "seam": 1
+  },
+  "limitations": [
+    "입력 치수 기반 개념도이며 사진 실측이나 봉제용 실물 패턴이 아닙니다.",
+    "사각형 부품을 원단 결 방향을 유지하며 행에 배치합니다. 회전·최적 배치는 적용하지 않습니다.",
+    "상의는 몸판·소매 바운딩 박스 추정입니다. 넥밴드·곡선·소맷단·신축률은 반영하지 않습니다.",
+    "손실률을 배치 길이에 추가하고 0.1m 단위로 올림합니다.",
+    "단가·공임·개발비는 사용자가 입력한 가정이며 세금·배송비·실제 업체 견적이 아닙니다.",
+    "통화 선택은 환율 변환을 수행하지 않습니다.",
+    "제작 가능 여부, 원단 수축률, 부자재 구성, 최소 수량을 업체와 확인해야 합니다."
+  ]
+}

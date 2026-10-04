@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('mobile creation delivers an interactive isolated preview, stored records, and an installable APK',async({page,request})=>{
+  test.setTimeout(90_000);
+  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.goto('/#new');
+  await page.getByRole('button',{name:'모바일 앱',exact:true}).click();
+  await page.getByLabel('만들고 싶은 프로젝트 설명').fill('매일 좋은 습관을 기록하고 완료하는 개인용 모바일 앱');
+  const response=page.waitForResponse(value=>value.url().endsWith('/api/projects')&&value.request().method()==='POST');
+  await page.getByRole('button',{name:'프로젝트 만들기',exact:true}).click();
+  const project=await(await response).json();
+  await expect(page.getByText('기기 미리보기',{exact:true})).toBeVisible({timeout:30_000});
+  const frame=page.frameLocator('.device-frame iframe');
+  await expect(page.locator('.device-frame iframe')).toHaveAttribute('sandbox','allow-scripts allow-forms');
+  await page.locator('.device-frame iframe').scrollIntoViewIfNeeded();
+  await expect(page.locator('.device-frame iframe')).toBeInViewport({ratio:1});
+  await frame.getByRole('button',{name:'새 기록 만들기',exact:true}).click();
+  await expect(frame.getByLabel('제목',{exact:true})).toBeVisible();
+  await frame.getByLabel('제목',{exact:true}).fill('브라우저에서 검증한 작은 습관');
+  await frame.getByLabel('나의 메모',{exact:true}).fill('실제 저장과 다시 열기를 확인합니다.');
+  await frame.getByRole('button',{name:'기록 남기기 →',exact:true}).click();
+  await expect(frame.getByRole('heading',{name:'브라우저에서 검증한 작은 습관',exact:true})).toBeVisible();
+  await frame.getByRole('button',{name:'브라우저에서 검증한 작은 습관 완료 표시',exact:true}).click();
+  await expect(frame.getByRole('button',{name:'브라우저에서 검증한 작은 습관 완료 해제',exact:true})).toBeVisible();
+  const originalFrame=await(await page.locator('.device-frame iframe').elementHandle())?.contentFrame();
+  await page.getByRole('button',{name:'모바일 미리보기 새로고침',exact:true}).click();
+  await expect.poll(()=>originalFrame?.isDetached()).toBe(true);
+  await expect(frame.getByRole('heading',{name:'브라우저에서 검증한 작은 습관',exact:true})).toBeVisible();
+  await expect(frame.getByRole('button',{name:'브라우저에서 검증한 작은 습관 완료 해제',exact:true})).toBeVisible();
+  await expect.poll(async()=>(await(await request.get(`/api/projects/${project.id}/android`)).json()).status,{timeout:45_000}).toBe('ready');
+  const apk=await request.get(`/api/projects/${project.id}/android/apk`);expect(apk.ok()).toBeTruthy();
+  const bytes=await apk.body();expect(bytes.readUInt32LE(0)).toBe(0x04034b50);expect(bytes.includes(Buffer.from('classes.dex'))).toBeTruthy();expect(bytes.includes(Buffer.from('AndroidManifest.xml'))).toBeTruthy();
+  await expect(page.getByRole('link',{name:/APK 다운로드/})).toBeVisible();
+  await page.setViewportSize({width:390,height:844});
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth)).toBeLessThanOrEqual(1);
+  expect(errors).toEqual([]);
+});

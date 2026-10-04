@@ -1,0 +1,30 @@
+import { test, expect } from '@playwright/test';
+
+test('agent delivery selection reaches real API and MCP artifacts',async({page,request})=>{
+  test.setTimeout(90_000);
+  await page.goto('/#new');
+  await page.getByRole('button',{name:'AI 에이전트',exact:true}).click();
+  await page.getByRole('button',{name:'API 다른 서비스에서 호출'}).click();
+  await page.getByLabel('만들고 싶은 프로젝트 설명').fill('회의 내용을 체크리스트로 정리하는 개인 에이전트 만들어줘');
+  await expect(page.getByText('API + 호출 문서',{exact:true})).toBeVisible();
+  const created=page.waitForResponse(r=>r.url().endsWith('/api/projects')&&r.request().method()==='POST');
+  await page.getByRole('button',{name:'프로젝트 만들기',exact:true}).click();
+  const apiProject=await(await created).json();
+  expect(apiProject.agentDelivery).toBe('api');
+  await expect(page.getByRole('region',{name:'에이전트 연결 안내'})).toBeVisible({timeout:30_000});
+  const completed=await(await request.get(`/api/projects/${apiProject.id}`)).json();
+  expect(completed.files.some((f:{path:string})=>f.path==='openapi.json')).toBeTruthy();
+  expect(completed.checks.some((c:{name:string;passed:boolean})=>c.name==='Bearer API 실제 호출'&&c.passed)).toBeTruthy();
+  await page.goto('/#new');
+  await page.getByRole('button',{name:'AI 에이전트',exact:true}).click();
+  await page.getByRole('button',{name:'MCP Codex 등 AI 도구에 연결'}).click();
+  await page.getByLabel('만들고 싶은 프로젝트 설명').fill('긴 메모를 정리해서 체크리스트로 만드는 에이전트 만들어줘');
+  const mcpCreated=page.waitForResponse(r=>r.url().endsWith('/api/projects')&&r.request().method()==='POST');
+  await page.getByRole('button',{name:'프로젝트 만들기',exact:true}).click();
+  const mcp=await(await mcpCreated).json();
+  await expect(page.getByText('AI 도구에 연결하는 MCP',{exact:true})).toBeVisible({timeout:30_000});
+  const result=await(await request.get(`/api/projects/${mcp.id}`)).json();
+  expect(result.checks.some((c:{name:string;passed:boolean})=>c.name==='MCP tools/call 체크리스트'&&c.passed)).toBeTruthy();
+  await page.getByText('MCP 연결 설정 예시',{exact:true}).click();
+  await expect(page.getByText(/로컬 stdio 연결을 지원하는 클라이언트/)).toBeVisible();
+});
