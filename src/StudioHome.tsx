@@ -34,7 +34,6 @@ export default function StudioHome({ config, projects, loading, prompt, kind, ag
   return (
     <div className="home-page page-container">
       <section className="creation-stage">
-        <div className="studio-grid" aria-hidden="true"><i /><i /><i /></div>
         <header className="studio-hero">
           <h1 className="studio-headline">Build what you have in mind.</h1>
         </header>
@@ -70,7 +69,7 @@ export default function StudioHome({ config, projects, loading, prompt, kind, ag
               disabled={creating}
             />
             <div className="composer-bottom">
-              <div className="composer-engine"><span /><span>{config?.mode === 'openai' ? 'AI ENGINE' : 'TEMPLATE ENGINE'}</span><span className="engine-divider" /><span className="composer-key"><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span></div>
+              <div className="composer-engine"><span /><span>{config?.authMode === 'codex-subscription' ? 'Codex 구독' : config?.mode === 'openai' ? 'OpenAI 연결됨' : '템플릿 모드'}</span><span className="engine-divider" /><span className="composer-key"><kbd>Ctrl</kbd> + <kbd>Enter</kbd></span></div>
               <button className="create-button" type="submit" disabled={creating || !config}>
                 <span>{creating ? '프로젝트 준비 중' : '프로젝트 만들기'}</span>
                 {creating ? <LoaderCircle size={17} className="spin" /> : <ArrowUp size={17} />}

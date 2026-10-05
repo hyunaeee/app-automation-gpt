@@ -1,4 +1,4 @@
-import { ArrowUp, ArrowUpRight, Check, ChevronRight, Circle, Code2, FileCode2, LayoutGrid, LoaderCircle, MessageSquare, MoreHorizontal, Plus, Sparkles, X } from 'lucide-react';
+import { ArrowUp, ArrowUpRight, Check, ChevronRight, Circle, Code2, FileCode2, LayoutGrid, LoaderCircle, MessageSquare, MoreHorizontal, Plus, Smartphone, Sparkles, X } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import type { ReactNode } from 'react';
 import type { Project, ProjectKind } from './types';
@@ -45,7 +45,7 @@ export function ProjectCard({ project, onOpen }: { project: Project; onOpen: () 
     <button className="project-card" onClick={onOpen}>
       <div className="project-card-top">
         <span className={`project-symbol ${project.kind === 'ai-agent' ? 'purple' : ''}`}>
-          {project.kind === 'ai-agent' ? <Sparkles size={20} /> : <LayoutGrid size={20} />}
+          {project.kind === 'ai-agent' ? <Sparkles size={20} /> : project.kind === 'mobile-app' ? <Smartphone size={20} /> : <LayoutGrid size={20} />}
         </span>
         <StatusBadge project={project} />
       </div>
