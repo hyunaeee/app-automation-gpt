@@ -130,6 +130,8 @@ npm run test:e2e
 
 통합 테스트는 임시 프로젝트를 생성하고 실제 자식 서버에서 회원가입, 로그인, 로그아웃, 데이터 저장·소유권 분리, 에이전트 실행, ZIP 출력을 검증합니다. 외부 API 키 없이 실행할 수 있습니다.
 
+[GitHub Actions CI](https://github.com/hyunaeee/app-automation-gpt/actions/workflows/ci.yml)는 PR과 `main` 변경마다 Node.js 22·24에서 잠금 파일로 의존성을 설치하고 `npm test`, `npm run build`를 실행합니다. 테스트·빌드 로그는 실행별 artifact로 14일 보관합니다. 모델·Google OAuth·Vercel 연동은 주입된 테스트 대역으로 검증하며, CI에는 외부 서비스 자격 증명을 전달하지 않습니다. 실제 모델 호출, Vercel 배포, 브라우저 E2E와 Android SDK를 사용하는 APK 빌드는 이 검사에 포함하지 않습니다.
+
 ## MVP 범위
 
 로컬에서는 개인용 워크스페이스, Vercel에서는 Google 계정 또는 공용 비밀번호로 보호하는 크루용 워크스페이스를 제공합니다. 생성 앱의 회원 계정과 워크스페이스 접근 제어는 서로 다른 영역입니다. 공개 SaaS 서비스용 다중 조직·과금·생성 앱의 운영 배포 자동화는 포함하지 않습니다.

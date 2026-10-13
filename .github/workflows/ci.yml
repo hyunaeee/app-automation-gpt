@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-build:
+    name: Node ${{ matrix.node }} tests and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    env:
+      CI: 'true'
+      NODE_ENV: test
+      AI_PROVIDER: openai
+      OPENAI_API_KEY: ''
+      GEMINI_API_KEY: ''
+      GOOGLE_CLIENT_ID: ''
+      GOOGLE_CLIENT_SECRET: ''
+      BLOB_READ_WRITE_TOKEN: ''
+      RUN_ANDROID_BUILD_TEST: '0'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Test API, workflow, and provider contracts
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/ci
+          npm test 2>&1 | tee artifacts/ci/node-test.log
+      - name: Check TypeScript and build production bundle
+        if: ${{ !cancelled() && success() }}
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee artifacts/ci/build.log
+      - name: Preserve validation logs
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-node-${{ matrix.node }}
+          path: artifacts/ci/*.log
+          if-no-files-found: ignore
+          retention-days: 14

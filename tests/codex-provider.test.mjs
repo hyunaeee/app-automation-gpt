@@ -71,10 +71,15 @@ function mockCliProcess(t, { ignoreTerm = false } = {}) {
   let started;
   const entered = new Promise(resolve => { started = resolve; });
   const kills = [];
-  let cwd;
+  let cwd, processLifetime;
   const spawnMock = t.mock.method(childProcess, 'spawn', (_executable, _args, options) => {
     cwd = options.cwd;
     const child = new EventEmitter();
+    // A real ChildProcess keeps the event loop alive until it closes. Model that
+    // lifetime explicitly: AbortSignal.timeout and the escalation timer are
+    // unreferenced, so an EventEmitter alone can exit early on Node 22.
+    processLifetime = setInterval(() => {}, 1000);
+    child.once('close', () => clearInterval(processLifetime));
     child.stdout = new EventEmitter(); child.stderr = new EventEmitter(); child.stdin = new EventEmitter();
     child.stdin.end = () => {};
     child.kill = (signal = 'SIGTERM') => {
@@ -86,7 +91,7 @@ function mockCliProcess(t, { ignoreTerm = false } = {}) {
     return child;
   });
   syncBuiltinESMExports();
-  t.after(() => { spawnMock.mock.restore(); syncBuiltinESMExports(); });
+  t.after(() => { clearInterval(processLifetime); spawnMock.mock.restore(); syncBuiltinESMExports(); });
   return { entered, kills, cwd: () => cwd };
 }
 
